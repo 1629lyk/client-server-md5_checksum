@@ -30,15 +30,15 @@ public class Server {
                         continue;
                     }
 
-                    // 1) Compute MD5 checksum of the file
+                    // Compute MD5 checksum of the file
                     String checksum = computeMD5Checksum(fileName);
                     log("MD5 checksum of the file: " + checksum);
 
-                    // 2) Send checksum to the client (as UTF)
+                    // Send checksum to the client (as UTF)
                     dos.writeUTF(checksum);
                     dos.flush();
 
-                    // 3) Send the file data until EOF
+                    // Send the file data until EOF
                     byte[] buffer = new byte[4096];
                     int bytesRead;
                     while ((bytesRead = bis.read(buffer)) != -1) {

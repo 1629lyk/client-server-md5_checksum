@@ -44,7 +44,7 @@ public class Client {
             log("Error connecting to server: " + e.getMessage());
         }
 
-        // FILE IS FULLY WRITTEN AND STREAMS ARE CLOSED AT THIS POINT 
+        // File is fully written and streams are closed 
         if (fileReceived && serverChecksum != null) {
             log("File received and saved as '" + saveFilePath + "'");
 
